@@ -1,0 +1,375 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="author" content="Jon Snow">
+  
+  
+  
+  
+    <meta name="description" content="Build a Github blog with Hexo使用 Hexo 搭建 Github 博客  
+你也可以使用 Hexo 官方文档Step1: New repository
+在你的Github上新建一个库，名字严格遵守为：.github.io。
+setting你的库,选择master branch, 当然你也可以点击 Chose theme 选择简单的博客主题。
+在浏览器中打开 .gi...">
+  
+  <title> [ Mazeppa ]</title>
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+  
+</head>
+
+<body>
+<div class="side-navigate hide-area">
+  
+  
+    <div class="item next">
+      <a href="/2018/03/19/Mazeppa/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        
+      </div>
+    </div>
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onClick="openUserCard()">
+          <img id="avatar" src="https://avatars3.githubusercontent.com/u/23415847?s=460&amp"/>
+          <div id="homelink">Mazeppa</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">Home</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">Archives</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">Tags</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">Categories</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/about">About</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/JonSnow47">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  <article id="post">
+    <h1>No Title</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">Created at 2018-03-22</span>
+      
+        <span id = "post-title-updated">Updated at 2018-03-22</span>
+      
+      
+      
+    </p>
+    
+    <h1 id="Build-a-Github-blog-with-Hexo"><a href="#Build-a-Github-blog-with-Hexo" class="headerlink" title="Build a Github blog with Hexo"></a>Build a Github blog with Hexo</h1><p>使用 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 搭建 <a href="https://github.com/JonSnow47/JonSnow47.github.io" target="_blank" rel="noopener">Github</a> 博客  </p>
+<h2 id="你也可以使用-Hexo-官方文档"><a href="#你也可以使用-Hexo-官方文档" class="headerlink" title="你也可以使用 Hexo 官方文档"></a>你也可以使用 Hexo <a href="https://hexo.io/docs/" target="_blank" rel="noopener">官方文档</a></h2><h3 id="Step1-New-repository"><a href="#Step1-New-repository" class="headerlink" title="Step1: New repository"></a>Step1: New repository</h3><ol>
+<li>在你的Github上新建一个库，名字严格遵守为：<username>.github.io。<br><img src="https://github.com/JonSnow47/Mazeppa/blob/master/Build%20a%20Github%20blog%20with%20Hexo/step1_1.png?raw=true" alt="step1_1"></username></li>
+<li>setting你的库,选择master branch, 当然你也可以点击 Chose theme 选择简单的博客主题。<br><img src="https://github.com/JonSnow47/Mazeppa/blob/master/Build%20a%20Github%20blog%20with%20Hexo/step1_2.png?raw=true" alt="step1_2"></li>
+<li>在浏览器中打开 <username>.github.io ，发现库里面的内容已经暴露在外网了。</username></li>
+</ol>
+<hr>
+<h3 id="Step2-Install-Git-node-js-Hexo"><a href="#Step2-Install-Git-node-js-Hexo" class="headerlink" title="Step2: Install Git, node.js, Hexo"></a>Step2: Install Git, node.js, Hexo</h3><h5 id="Install-Git"><a href="#Install-Git" class="headerlink" title="Install Git"></a>Install Git</h5><ul>
+<li>Windows: <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Download</a> &amp; install git.</li>
+<li><p>Mac: Install it with Homebrew, MacPorts or installer.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Linux (Ubuntu, Debian): sudo apt-get install git-core</p>
+</li>
+<li>Linux (Fedora, Red Hat, CentOS): sudo yum install git-core<h5 id="Install-Node-js"><a href="#Install-Node-js" class="headerlink" title="Install Node.js"></a>Install Node.js</h5></li>
+<li>Windows: <a href="https://nodejs.org" target="_blank" rel="noopener">Download</a> &amp; install Node.js</li>
+<li>Mac: Install it with Homebrew<h5 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h5></li>
+<li>Install Hexo with npm:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="Step3-Init-a-new-blog-with-hexo"><a href="#Step3-Init-a-new-blog-with-hexo" class="headerlink" title="Step3: Init a new blog with hexo"></a>Step3: Init a new blog with hexo</h3><ol>
+<li>打开 Terminal cd 到合适的位置<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog    // 创建并初始化 blog 文件夹</span><br><span class="line">$ <span class="built_in">cd</span> blog           // 进入 blog</span><br><span class="line">$ npm install       // 安装依赖包</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>执行这些命令后你的本地博客已经搭建完成了  </p>
+<ol>
+<li>通过配置 _config.yml 文件来设置你的喜好  </li>
+<li>在 Terminal 中输入<figure class="highlight plain"><figcaption><span>hexo server```将网页暴露在本地端口4000</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">然后在浏览器里打开 [localhost:4000](localhost:4000)  </span><br><span class="line">![step3_3](https://github.com/JonSnow47/Mazeppa/blob/master/Build%20a%20Github%20blog%20with%20Hexo/step3.png?raw=true)  </span><br><span class="line">如果打开后是这样的，那么本地博客就已经生成</span><br><span class="line">More info: [Server](https://hexo.io/docs/server.html)</span><br><span class="line">---</span><br><span class="line">### Step4: Connect to github</span><br><span class="line">1. 生成 ssh 密钥(如果之前有生成 ssh 密钥可以跳过此步)</span><br><span class="line">打开 Terminal ```$ ssh-keygen -t rsa -C &quot;注册Github时使用的Email&quot;``` 来生成 ssh 密钥(过程中敲回车就OK，不用设置密码)  </span><br><span class="line">此条命令会生成3个文件：</span><br><span class="line">```bash</span><br><span class="line">$ ls</span><br><span class="line">id_rsa  id_rsa.pub  known_host</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>生成的密钥位置：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">windows: C:/Users/用户名/.ssh/  </span><br><span class="line">mac: ~/.ssh/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li>复制 id_rsa.pub 文件中的内容到在你的Github上添加 SSH 密钥<br><img src="https://github.com/JonSnow47/Mazeppa/blob/master/Build%20a%20Github%20blog%20with%20Hexo/step4_3.png?raw=true" alt="step4_3"></li>
+<li>打开 Terminal，切换到 /blog 目录<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate     <span class="comment">#生成静态文件</span></span><br><span class="line">$ hexo deploy       <span class="comment">#部署到Github</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>如果部署出现：<figure class="highlight plain"><figcaption><span>not found: git```错误</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在终端执行命令：```npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>然后继续执行hexo deploye指令进行部署。</p>
+<ol>
+<li>将 <username>.github.io 发给朋友吧<h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><a href="https://hexo.io/docs/" target="_blank" rel="noopener">Hexo docs</a><br><a href="https://www.jianshu.com/p/e99ed60390a8" target="_blank" rel="noopener">Hexo搭建博客-20分钟简要教程</a><br><a href="https://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">Windows+Hexo+Github搭建属于自己的博客</a></username></li>
+</ol>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <div class="random-toc">
+    <h2>Table of Content</h2>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Build-a-Github-blog-with-Hexo"><span class="toc-text">Build a Github blog with Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#你也可以使用-Hexo-官方文档"><span class="toc-text">你也可以使用 Hexo 官方文档</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Step1-New-repository"><span class="toc-text">Step1: New repository</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Step2-Install-Git-node-js-Hexo"><span class="toc-text">Step2: Install Git, node.js, Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Install-Git"><span class="toc-text">Install Git</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Install-Node-js"><span class="toc-text">Install Node.js</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Install-Hexo"><span class="toc-text">Install Hexo</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Step3-Init-a-new-blog-with-hexo"><span class="toc-text">Step3: Init a new blog with hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#References"><span class="toc-text">References</span></a></li></ol></li></ol></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+
+  
+
+  
+    <a href="/2018/03/19/Mazeppa/" class="next">Next post  &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by Jon Snow using
+      <a href="http://hexo.io">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="https://avatars3.githubusercontent.com/u/23415847?s=460&amp">
+    <p id="description">Made in Earth by human.</p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://github.com/JonSnow47">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://www.youtube.com/channel/UCV_phIRy8iVfyNmy6fOyAZw">
+        
+          <i class="icon iconfont youtube">&#xe60a;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://twitter.com/SidCN">
+        
+          <i class="icon iconfont twitter">&#xe600;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://weibo.com/u/5448233004">
+        
+          <i class="icon iconfont weibo">&#xe602;</i>
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["slideLeft2","slideRight2","flash2"],"timer":true,"delay":5000,"shuffle":true,"count":27};
+var unsplashConfig = {"gravity":"north"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+  turnoffBackgroundImage = true;
+
+
+var backgroundColor = "D7CCC8";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+</body>
+</html>
+
